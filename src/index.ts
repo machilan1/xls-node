@@ -1,6 +1,9 @@
 import * as XLSX from "xlsx";
-import { Entry, Record, Config } from "./types";
-import { DEFAULT_ABSTRACT_TYPE, validateTransferRecords } from "./transformer";
+import { Entry, Record, Config } from "./transformer/types";
+import {
+  DEFAULT_ABSTRACT_TYPE,
+  validateTransferRecords,
+} from "./transformer/transformer";
 async function readXls(
   inputFilePath: string,
   outputFilePath: string,
@@ -104,6 +107,7 @@ async function readXls(
 const inputFilePath = "./assets/xls/origin.xls";
 const outputFilePath = "./assets/output/output123.xls";
 
+// TODO: Replace this hard-coded data with the return value of a function
 const config: Config = {
   company: "077WCX",
   abstractType: DEFAULT_ABSTRACT_TYPE,
@@ -111,6 +115,7 @@ const config: Config = {
   date: "1131211",
 };
 
+// TODO: Replace this hard-coded data with the return value of a function
 const records: Record[] = [
   {
     serialNum: "1",

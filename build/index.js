@@ -43,7 +43,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const XLSX = __importStar(require("xlsx"));
-const transformer_1 = require("./transformer");
+const transformer_1 = require("./transformer/transformer");
 function readXls(inputFilePath, outputFilePath, config, records) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

@@ -95,6 +95,7 @@ function validateRecord(record, errors) {
     }
 }
 // TODO: There are some record validation not implemented yet.
+// TODO: These functions should be tested
 function validateAccNum(acctKind, acctNum) {
     acctKind = acctKind.trim();
     acctNum = acctNum.trim();
