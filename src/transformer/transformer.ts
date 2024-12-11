@@ -8,12 +8,10 @@ import {
   validateID,
   checkDuplicateCode,
 } from "./validators";
+
 export const DEFAULT_ABSTRACT_TYPE = "24";
 
-// Constants for error messages
-
 // TODO: CreateTransferRecords()
-
 export function validateTransferRecords(config: Config, records: Record[]) {
   const configErrors: Error[] = [];
   const formatErrors: Error[] = [];

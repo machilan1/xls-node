@@ -1,10 +1,63 @@
 import * as XLSX from "xlsx";
-import { Entry, Record, Config } from "./transformer/types";
+import { Record, Config } from "./transformer/types";
 import {
   DEFAULT_ABSTRACT_TYPE,
   validateTransferRecords,
 } from "./transformer/transformer";
-async function readXls(
+
+function main() {
+  const inputFilePath = "./assets/xls/origin.xls";
+  const outputFilePath = "./assets/output/output123.xls";
+
+  // TODO: Replace this hard-coded data with the return value of a function
+  const config: Config = {
+    company: "077WCX",
+    abstractType: DEFAULT_ABSTRACT_TYPE,
+    duplicateCode: "1",
+    date: "1131211",
+  };
+
+  // TODO: Replace this hard-coded data with the return value of a function
+  const records: Record[] = [
+    {
+      serialNum: "1",
+      crDr: "DR",
+      entry: {
+        acctKind: "00001",
+        acctNum: "000000010",
+        amount: "30000",
+        id: "42912964",
+        name: "範例企業有限公司",
+      },
+    },
+    {
+      serialNum: "2",
+      crDr: "CR",
+      entry: {
+        acctKind: "00001",
+        acctNum: "000000027",
+        amount: "10000",
+        id: "R124511881",
+        name: "張小英",
+      },
+    },
+    {
+      serialNum: "3",
+      crDr: "CR",
+      entry: {
+        acctKind: "00001",
+        acctNum: "000000034",
+        amount: "20000",
+        id: "R121250943",
+        name: "林正如",
+      },
+    },
+  ];
+
+  readXls(inputFilePath, outputFilePath, config, records);
+}
+
+function readXls(
   inputFilePath: string,
   outputFilePath: string,
   config: Config,
@@ -104,52 +157,4 @@ async function readXls(
 }
 
 // Usage
-const inputFilePath = "./assets/xls/origin.xls";
-const outputFilePath = "./assets/output/output123.xls";
-
-// TODO: Replace this hard-coded data with the return value of a function
-const config: Config = {
-  company: "077WCX",
-  abstractType: DEFAULT_ABSTRACT_TYPE,
-  duplicateCode: "1",
-  date: "1131211",
-};
-
-// TODO: Replace this hard-coded data with the return value of a function
-const records: Record[] = [
-  {
-    serialNum: "1",
-    crDr: "DR",
-    entry: {
-      acctKind: "00001",
-      acctNum: "000000010",
-      amount: "30000",
-      id: "42912964",
-      name: "範例企業有限公司",
-    },
-  },
-  {
-    serialNum: "2",
-    crDr: "CR",
-    entry: {
-      acctKind: "00001",
-      acctNum: "000000027",
-      amount: "10000",
-      id: "R124511881",
-      name: "張小英",
-    },
-  },
-  {
-    serialNum: "3",
-    crDr: "CR",
-    entry: {
-      acctKind: "00001",
-      acctNum: "000000034",
-      amount: "20000",
-      id: "R121250943",
-      name: "林正如",
-    },
-  },
-];
-
-readXls(inputFilePath, outputFilePath, config, records);
+main();
