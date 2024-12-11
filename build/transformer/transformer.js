@@ -5,7 +5,6 @@ exports.validateTransferRecords = validateTransferRecords;
 const errors_1 = require("./errors");
 const validators_1 = require("./validators");
 exports.DEFAULT_ABSTRACT_TYPE = "24";
-// Constants for error messages
 // TODO: CreateTransferRecords()
 function validateTransferRecords(config, records) {
     const configErrors = [];
